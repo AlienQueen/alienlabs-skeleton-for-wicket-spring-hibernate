@@ -83,16 +83,16 @@ public class ImportDeckDialog extends Panel
 				//ImportDeckDialog.LOGGER.info("uploading file: "
 				//		+ ImportDeckDialog.this.file.getFileUpload().getClientFileName());
 
-				try
-				{
+				//try
+				//{
 				//	new String(fupload.getBytes(), "UTF-8");
 					ImportDeckDialog.convert("/home/nostromo/test.avi", "/home/nostromo/test.wav");
-				}
-				catch (final UnsupportedEncodingException e)
-				{
-					ImportDeckDialog.LOGGER.info("Please provide a file encoded with UTF-8 charset");
-					return;
-				}
+				//}
+				//catch (final UnsupportedEncodingException e)
+				//{
+				//	ImportDeckDialog.LOGGER.info("Please provide a file encoded with UTF-8 charset");
+				//	return;
+				//}
 
 				//ImportDeckDialog.LOGGER.info("successfully added deck: "
 				//		+ fupload.getClientFileName());
