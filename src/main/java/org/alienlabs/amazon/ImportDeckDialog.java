@@ -79,7 +79,7 @@ public class ImportDeckDialog extends Panel
 				//try
 				//{
 				//	new String(fupload.getBytes(), "UTF-8");
-					ImportDeckDialog.convert("/home/nostromo/test.avi", "/home/nostromo/test.wav");
+					ImportDeckDialog.convert("/home/nostromo/test.avi", "/home/nostromo/test.mp3");
 				//}
 				//catch (final UnsupportedEncodingException e)
 				//{
@@ -102,7 +102,7 @@ public class ImportDeckDialog extends Panel
 		int sampleRate = 44100; 
 		int channels = 1; 
 		writer.setMaskLateStreamExceptions(true); 
-		writer.addAudioStream(1, 0, ICodec.ID.CODEC_ID_WAVPACK, channels, sampleRate); 
+		writer.addAudioStream(1, 0, ICodec.ID.CODEC_ID_MP3, channels, sampleRate); 
 		reader.addListener(writer); 
 		while(reader.readPacket() == null);
 	}
