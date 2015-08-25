@@ -20,17 +20,10 @@ import org.apache.wicket.util.lang.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
-import com.xuggle.mediatool.IMediaReader; 
-import com.xuggle.mediatool.IMediaWriter; 
-import com.xuggle.mediatool.MediaToolAdapter; 
-import com.xuggle.mediatool.MediaListenerAdapter;
-import com.xuggle.mediatool.ToolFactory; 
-import com.xuggle.mediatool.event.IAudioSamplesEvent; 
-import com.xuggle.mediatool.event.ICloseEvent; 
-import com.xuggle.mediatool.event.IOpenCoderEvent; 
-import com.xuggle.mediatool.event.IAddStreamEvent;
-import com.xuggle.xuggler.IContainer; 
-import com.xuggle.xuggler.IStreamCoder;
+import com.xuggle.mediatool.IMediaReader;
+import com.xuggle.mediatool.IMediaWriter;
+import com.xuggle.mediatool.ToolFactory;
+import com.xuggle.xuggler.ICodec;
 
 @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = { "SE_INNER_CLASS",
 "SIC_INNER_SHOULD_BE_STATIC_ANON" }, justification = "In Wicket, serializable inner classes are common. And as the parent Page is serialized as well, this is no concern. This is no bad practice in Wicket")
