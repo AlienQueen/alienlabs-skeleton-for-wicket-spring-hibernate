@@ -7,8 +7,23 @@
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
 		<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 		<script>
-		document.ready = function() {
+		window.onload = function() {
 		    var pop = Popcorn("#ourvideo");
+			pop.subtitle(
+			{ start: 5,
+			end: 10,
+			text: "this is the first subtitle of my project"
+			});
+			pop.subtitle(
+			{ start: 11,
+			end: 15,
+			text: "I hope you'll enjoy it!"
+			});
+			pop.subtitle(
+			{ start: 16,
+			end: 20,
+			text: "Have a lot of fun!"
+			});
 			pop.image(
 			{ start: 5,
 			  end: 10,
@@ -30,7 +45,6 @@
 			  text: "alien 2",
 			  target: "imagediv"
 		    });
-			pop.play();
 		}
 		</script>
 	</head>
