@@ -53,10 +53,8 @@ public class ImportDeckDialog extends Panel
 		form.add(this.file);
 		this.add(form);
 
-		final Button upload = new Button("upload") {
+		final Button upload = new Button("upload")
 		{
-			private static final long serialVersionUID = 1L;
-
 			@Override
 			protected void onSubmit()
 			{
@@ -100,7 +98,9 @@ public class ImportDeckDialog extends Panel
 						+ fupload.getClientFileName());
 				ImportDeckDialog.LOGGER.info("Your file has been successfully uploaded");
 			}
-		});
+		};
+		
+		form.add(upload);
 	}
 	
 	public static void convert(String from, final String to) { 
