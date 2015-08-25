@@ -5,19 +5,17 @@
 		<title>Alienlabs quickstart</title>
 		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
-		<link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet"/>
-		<script src="//vjs.zencdn.net/4.12/video.js"></script>
+		<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 		<script>
-		  document.ready = function() {
-		    videojs("example_video_1", {}, function() { 
-			  // Player (this) is initialized and ready.
-			});
-		  }
+		document.addEventListener("DOMContentLoaded", function() {
+		    var popcorn = Popcorn("#ourvideo");
+			popcorn.footnote({ start: 2, end: 5, target: "footnote", 
+			text: "Pop!" });
 		</script>
 	</head>
 	<body>
 			<h2>Welcome!</h2>
-			<video id="example_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264" poster="http://camendesign.com/code/video_for_everybody/poster.jpg" data-setup='{"example_option":true}'> 
+			<video id="ourvideo" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264" poster="http://camendesign.com/code/video_for_everybody/poster.jpg" data-setup='{"example_option":true}'> 
 			  <source src="https://ia700408.us.archive.org/26/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4" type='video/mp4' /> 
 			  <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type='video/webm' />
 			  <source src="https://ia700408.us.archive.org/26/items/BigBuckBunny_328/BigBuckBunny.ogv" type='video/ogg' /> 
@@ -25,6 +23,7 @@
 				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
 			  </p> 
 			</video>
+			<div id="footnote"></div>
 		<div id="ft">
 			WOT <span wicket:id="message1" id="message1" class="myfont">message will be here</span>
 			<span wicket:id="message2" id="message2" class="myfont">message will be here</span>
