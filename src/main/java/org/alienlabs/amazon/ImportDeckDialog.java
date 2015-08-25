@@ -53,43 +53,41 @@ public class ImportDeckDialog extends Panel
 		form.add(this.file);
 		this.add(form);
 
-		final Button upload = new Button("upload");
-		form.add(upload);
-		upload.add(new AjaxFormSubmitBehavior(form, "click")
+		final Button upload = new Button("upload") {
 		{
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			protected void onSubmit(final AjaxRequestTarget target)
+			protected void onSubmit()
 			{
 				ImportDeckDialog.LOGGER.info("trying to upload something");
 
-				final FileUpload fupload = ImportDeckDialog.this.file.getFileUpload();
-				if (fupload == null)
-				{
+				//final FileUpload fupload = ImportDeckDialog.this.file.getFileUpload();
+				//if (fupload == null)
+				//{
 					// No file was provided
-					ImportDeckDialog.LOGGER.info("Please provide a valid file");
-					return;
-				}
-				else if (fupload.getSize() == 0)
-				{
-					ImportDeckDialog.LOGGER.info("Please provide a non-empty file");
-					return;
-				}
-				else if ((fupload.getClientFileName() == null)
-						|| ("".equals(fupload.getClientFileName().trim()))
-						|| (fupload.getClientFileName().endsWith(".txt")))
-				{
-					ImportDeckDialog.LOGGER.info("Please provide a valid file");
-					return;
-				}
+				//	ImportDeckDialog.LOGGER.info("Please provide a valid file");
+				//	return;
+				//}
+				//else if (fupload.getSize() == 0)
+				//{
+				//	ImportDeckDialog.LOGGER.info("Please provide a non-empty file");
+				//	return;
+				//}
+				//else if ((fupload.getClientFileName() == null)
+				//		|| ("".equals(fupload.getClientFileName().trim()))
+				//		|| (fupload.getClientFileName().endsWith(".txt")))
+				//{
+				//	ImportDeckDialog.LOGGER.info("Please provide a valid file");
+				//	return;
+				//}
 
 				ImportDeckDialog.LOGGER.info("uploading file: "
 						+ ImportDeckDialog.this.file.getFileUpload().getClientFileName());
 
 				try
 				{
-					new String(fupload.getBytes(), "UTF-8");
+				//	new String(fupload.getBytes(), "UTF-8");
 					ImportDeckDialog.convert("/home/nostromo/test.avi", "/home/nostromo/test.wav");
 				}
 				catch (final UnsupportedEncodingException e)
