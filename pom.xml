@@ -231,6 +231,12 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.6.12</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.boofcv</groupId>
+			<artifactId>xuggler</artifactId>
+			<version>0.18</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>alienlabs</finalName>
