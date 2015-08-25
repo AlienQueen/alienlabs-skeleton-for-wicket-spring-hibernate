@@ -40,8 +40,6 @@ public class ImportDeckDialog extends Panel
 	private static final long serialVersionUID = 1L;
 	final FileUploadField file;
 
-	final TextField<String> nameInput;
-
 	public ImportDeckDialog(final String id)
 	{
 		super(id);
