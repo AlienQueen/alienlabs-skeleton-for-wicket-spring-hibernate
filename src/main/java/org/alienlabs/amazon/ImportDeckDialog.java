@@ -1,8 +1,7 @@
-package org.alienlabs.hatchetharry.view.component.gui;
+package org.alienlabs.amazon;
 
 import java.io.UnsupportedEncodingException;
 
-import org.alienlabs.hatchetharry.service.ImportDeckService;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormSubmitBehavior;
 import org.apache.wicket.extensions.ajax.markup.html.IndicatingAjaxButton;
@@ -68,20 +67,19 @@ public class ImportDeckDialog extends Panel
 				if (fupload == null)
 				{
 					// No file was provided
-					ImportDeckDialog.this.setMessage(target, "Please provide a valid file");
+					ImportDeckDialog.LOGGER.info("Please provide a valid file");
 					return;
 				}
 				else if (fupload.getSize() == 0)
 				{
-					ImportDeckDialog.this.setMessage(target, "Please provide a non-empty file");
+					ImportDeckDialog.LOGGER.info("Please provide a non-empty file");
 					return;
 				}
 				else if ((fupload.getClientFileName() == null)
 						|| ("".equals(fupload.getClientFileName().trim()))
 						|| (fupload.getClientFileName().endsWith(".txt")))
 				{
-					ImportDeckDialog.this
-					.setMessage(target, "Please provide a valid file");
+					ImportDeckDialog.LOGGER.info("Please provide a valid file");
 					return;
 				}
 
@@ -95,15 +93,13 @@ public class ImportDeckDialog extends Panel
 				}
 				catch (final UnsupportedEncodingException e)
 				{
-					ImportDeckDialog.this.setMessage(target,
-							"Please provide a file encoded with UTF-8 charset");
+					ImportDeckDialog.LOGGER.info("Please provide a file encoded with UTF-8 charset");
 					return;
 				}
 
 				ImportDeckDialog.LOGGER.info("successfully added deck: "
 						+ fupload.getClientFileName());
-				ImportDeckDialog.this
-				.setMessage(target, "Your file has been successfully uploaded");
+				ImportDeckDialog.LOGGER.info("Your file has been successfully uploaded");
 			}
 		});
 	}
