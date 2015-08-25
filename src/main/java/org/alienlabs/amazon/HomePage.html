@@ -9,25 +9,25 @@
 		<script>
 		document.ready = function() {
 		    var pop = Popcorn("#ourvideo");
-			pop.footnote({ start: 2, end: 5, target: "footnote", 
-			text: "Pop!" });
-			
-			pop.play().image({ start: 5,
+			pop.play().image(
+			{ start: 5,
 			  end: 10,
 			  src: "http://www.revoltech.fr/images/photo_fiches/RSFX017_misc_3.jpg",
 			  text: "queen",
-			  target: "imagediv"},
+			  target: "imagediv"
+			}).image(
 			  { start: 11,
 			  end: 15,
 			  src: "http://imageslgmr.lazygamer.netdna-cdn.com/2014/10/alien-mouth.jpg",
 			  text: "alien 1",
-			  target: "imagediv"},
+			  target: "imagediv"
+		    }).image(
 			  { start: 16,
 			  end: 20,
 			  src: "http://morbius.o.m.f.unblog.fr/files/2010/01/alien10.jpg",
 			  text: "alien 2",
-			  target: "imagediv"}
-			  );
+			  target: "imagediv"
+		    });
 		}
 		</script>
 	</head>
@@ -42,7 +42,7 @@
 			  </p> 
 			</video>
 			<div id="imagediv"></div>
-			<img id="footnote"></img>
+			<div id="footnote"></div>
 		<div id="ft">
 			WOT <span wicket:id="message1" id="message1" class="myfont">message will be here</span>
 			<span wicket:id="message2" id="message2" class="myfont">message will be here</span>
