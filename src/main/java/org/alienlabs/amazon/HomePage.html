@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
 		<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 		<script>
-		document.addEventListener("DOMContentLoaded", function() {
+		document.ready = function() {
 		    var pop = Popcorn("#ourvideo");
 			pop.footnote({ start: 2, end: 5, target: "footnote", 
 			text: "Pop!" });
@@ -28,6 +28,7 @@
 			  text: "alien 2",
 			  target: "imagediv"}
 			  );
+		}
 		</script>
 	</head>
 	<body>
@@ -40,7 +41,7 @@
 				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
 			  </p> 
 			</video>
-			<span id="imagediv"></span>
+			<div id="imagediv"></div>
 			<img id="footnote"></img>
 		<div id="ft">
 			WOT <span wicket:id="message1" id="message1" class="myfont">message will be here</span>
