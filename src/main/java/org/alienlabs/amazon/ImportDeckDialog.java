@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Required;
 import com.xuggle.mediatool.IMediaReader; 
 import com.xuggle.mediatool.IMediaWriter; 
 import com.xuggle.mediatool.MediaToolAdapter; 
+import com.xuggle.mediatool.MediaListenerAdapter;
 import com.xuggle.mediatool.ToolFactory; 
 import com.xuggle.mediatool.event.IAudioSamplesEvent; 
 import com.xuggle.mediatool.event.ICloseEvent; 
