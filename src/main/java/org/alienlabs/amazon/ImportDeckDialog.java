@@ -56,7 +56,7 @@ public class ImportDeckDialog extends Panel
 		final Button upload = new Button("upload")
 		{
 			@Override
-			protected void onSubmit()
+			public void onSubmit()
 			{
 				ImportDeckDialog.LOGGER.info("trying to upload something");
 
