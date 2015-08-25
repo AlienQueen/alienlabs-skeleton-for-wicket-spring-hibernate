@@ -54,6 +54,7 @@ public class ImportDeckDialog extends Panel
 		this.add(form);
 
 		final Button upload = new Button("upload");
+		form.add(upload);
 		upload.add(new AjaxFormSubmitBehavior(form, "click")
 		{
 			private static final long serialVersionUID = 1L;
