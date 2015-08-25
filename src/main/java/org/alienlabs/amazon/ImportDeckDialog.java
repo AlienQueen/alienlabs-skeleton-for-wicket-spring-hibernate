@@ -80,8 +80,8 @@ public class ImportDeckDialog extends Panel
 				//	return;
 				//}
 
-				ImportDeckDialog.LOGGER.info("uploading file: "
-						+ ImportDeckDialog.this.file.getFileUpload().getClientFileName());
+				//ImportDeckDialog.LOGGER.info("uploading file: "
+				//		+ ImportDeckDialog.this.file.getFileUpload().getClientFileName());
 
 				try
 				{
@@ -94,8 +94,8 @@ public class ImportDeckDialog extends Panel
 					return;
 				}
 
-				ImportDeckDialog.LOGGER.info("successfully added deck: "
-						+ fupload.getClientFileName());
+				//ImportDeckDialog.LOGGER.info("successfully added deck: "
+				//		+ fupload.getClientFileName());
 				ImportDeckDialog.LOGGER.info("Your file has been successfully uploaded");
 			}
 		};
