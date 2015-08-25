@@ -79,7 +79,7 @@ public class ImportDeckDialog extends Panel
 				//try
 				//{
 				//	new String(fupload.getBytes(), "UTF-8");
-					ImportDeckDialog.convert("/home/nostromo/test.avi", "/home/nostromo/test.mp3");
+				ImportDeckDialog.convert("/home/nostromo/test.avi", "/home/nostromo/test.mp3");
 				//}
 				//catch (final UnsupportedEncodingException e)
 				//{
@@ -97,13 +97,18 @@ public class ImportDeckDialog extends Panel
 	}
 	
 	public static void convert(String from, final String to) { 
-		IMediaReader reader = ToolFactory.makeReader(from); 
-		IMediaWriter writer = ToolFactory.makeWriter(to, reader); 
-		int sampleRate = 44100; 
-		int channels = 1; 
-		writer.setMaskLateStreamExceptions(true); 
-		writer.addAudioStream(1, 0, ICodec.ID.CODEC_ID_MP3, channels, sampleRate); 
-		reader.addListener(writer); 
-		while(reader.readPacket() == null);
+		// create a media reader
+		IMediaReader mediaReader = ToolFactory.makeReader(from);
+		// create a media writer
+		IMediaWriter mediaWriter = ToolFactory.makeWriter(to, mediaReader);
+		// add a writer to the reader, to create the output file
+		mediaReader.addListener(mediaWriter);
+		// create a media viewer with stats enabled
+		IMediaViewer mediaViewer = ToolFactory.makeViewer(true);
+		// add a viewer to the reader, to see the decoded media
+		mediaReader.addListener(mediaViewer);
+		// read and decode packets from the source file
+		// and dispatch decoded audio and video to the writer
+		while (mediaReader.readPacket() == null) ;
 	}
 }
