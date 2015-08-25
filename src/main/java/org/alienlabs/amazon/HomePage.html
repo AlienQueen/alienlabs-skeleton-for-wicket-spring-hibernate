@@ -8,9 +8,26 @@
 		<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 		<script>
 		document.addEventListener("DOMContentLoaded", function() {
-		    var popcorn = Popcorn("#ourvideo");
-			popcorn.footnote({ start: 2, end: 5, target: "footnote", 
+		    var pop = Popcorn("#ourvideo");
+			pop.footnote({ start: 2, end: 5, target: "footnote", 
 			text: "Pop!" });
+			
+			pop.image({ start: 5,
+			  end: 10,
+			  src: "http://www.revoltech.fr/images/photo_fiches/RSFX017_misc_3.jpg",
+			  text: "queen",
+			  target: "imagediv"},
+			  { start: 11,
+			  end: 15,
+			  src: "http://imageslgmr.lazygamer.netdna-cdn.com/2014/10/alien-mouth.jpg",
+			  text: "alien 1",
+			  target: "imagediv"},
+			  { start: 16,
+			  end: 20,
+			  src: "http://morbius.o.m.f.unblog.fr/files/2010/01/alien10.jpg",
+			  text: "alien 2",
+			  target: "imagediv"}
+			  );
 		</script>
 	</head>
 	<body>
@@ -23,6 +40,7 @@
 				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
 			  </p> 
 			</video>
+			<span id="imagediv"></span>
 			<div id="footnote"></div>
 		<div id="ft">
 			WOT <span wicket:id="message1" id="message1" class="myfont">message will be here</span>
