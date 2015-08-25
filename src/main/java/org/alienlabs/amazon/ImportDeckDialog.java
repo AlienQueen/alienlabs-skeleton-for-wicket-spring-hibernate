@@ -28,6 +28,7 @@ import com.xuggle.mediatool.ToolFactory;
 import com.xuggle.mediatool.event.IAudioSamplesEvent; 
 import com.xuggle.mediatool.event.ICloseEvent; 
 import com.xuggle.mediatool.event.IOpenCoderEvent; 
+import com.xuggle.mediatool.event.IAddStreamEvent;
 import com.xuggle.xuggler.IContainer; 
 import com.xuggle.xuggler.IStreamCoder;
 
