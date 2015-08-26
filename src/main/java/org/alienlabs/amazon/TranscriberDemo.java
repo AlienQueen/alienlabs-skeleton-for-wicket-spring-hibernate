@@ -33,7 +33,8 @@ public class TranscriberDemo {
 
         // Load model from the jar
         configuration
-                .setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
+				.setAcousticModelPath("resource:/org/alienlabs/amazon/en-us/en-us");
+                //.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
 
         // You can also load model from folder
         // configuration.setAcousticModelPath("file:en-us");
