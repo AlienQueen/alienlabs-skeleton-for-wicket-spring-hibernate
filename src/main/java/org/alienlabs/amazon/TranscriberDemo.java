@@ -69,6 +69,7 @@ public class TranscriberDemo {
 
         }
         recognizer.stopRecognition();
+		System.out.println("### " + output.toString();
         return output.toString();
     }
 }
