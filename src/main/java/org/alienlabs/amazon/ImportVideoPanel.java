@@ -104,7 +104,7 @@ public class ImportVideoPanel extends Panel
 		IMediaWriter mediaWriter = ToolFactory.makeWriter(to, mediaReader);
 		int sampleRate = 44100;
 		int channels = 1;
-		mediaWriter.addAudioStream(1, 1, ICodec.ID.CODEC_ID_VORBIS, channels, sampleRate);
+		mediaWriter.addAudioStream(0, 0, ICodec.ID.CODEC_ID_VORBIS, channels, sampleRate);
 		mediaReader.addListener(mediaWriter);
 		
 		while (mediaReader.readPacket() == null)
