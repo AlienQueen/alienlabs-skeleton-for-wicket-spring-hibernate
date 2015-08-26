@@ -80,7 +80,7 @@ public class ImportVideoPanel extends Panel
 				//try
 				//{
 				//	new String(fupload.getBytes(), "UTF-8");
-				ImportVideoPanel.convert("/home/nostromo/test.avi", "/home/nostromo/test.wav");
+				ImportVideoPanel.convert("/home/nostromo/test.avi", "/home/nostromo/test.ogm");
 				//}
 				//catch (final UnsupportedEncodingException e)
 				//{
@@ -104,7 +104,7 @@ public class ImportVideoPanel extends Panel
 		IMediaWriter mediaWriter = ToolFactory.makeWriter(to, mediaReader);
 		int sampleRate = 44100;
 		int channels = 1;
-		mediaWriter.addAudioStream(1, 1, ICodec.ID.CODEC_ID_WAVPACK, channels, sampleRate);
+		mediaWriter.addAudioStream(1, 1, ICodec.ID.CODEC_ID_VORBIS, channels, sampleRate);
 		mediaReader.addListener(mediaWriter);
 		
 		while (mediaReader.readPacket() == null)
