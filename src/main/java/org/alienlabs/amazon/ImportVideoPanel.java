@@ -34,7 +34,7 @@ public class ImportVideoPanel extends Panel
 	private static final long serialVersionUID = 1L;
 	final FileUploadField file;
 
-	public ImportDeckDialog(final String id)
+	public ImportVideoPanel(final String id)
 	{
 		super(id);
 		Injector.get().inject(this);
