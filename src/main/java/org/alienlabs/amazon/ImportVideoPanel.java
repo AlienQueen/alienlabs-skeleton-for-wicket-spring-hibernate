@@ -84,7 +84,7 @@ public class ImportVideoPanel extends Panel
 				//try
 				//{
 				//	new String(fupload.getBytes(), "UTF-8");
-				ImportVideoPanel.convert("/home/nostromo/test.avi", "/home/nostromo/test.ogg");
+				ImportVideoPanel.convert("/home/nostromo/test.avi", "/home/nostromo/test.wav");
 				//}
 				//catch (final UnsupportedEncodingException e)
 				//{
