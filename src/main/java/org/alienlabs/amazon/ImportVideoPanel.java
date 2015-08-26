@@ -30,7 +30,7 @@ import com.xuggle.xuggler.ICodec;
 "SIC_INNER_SHOULD_BE_STATIC_ANON" }, justification = "In Wicket, serializable inner classes are common. And as the parent Page is serialized as well, this is no concern. This is no bad practice in Wicket")
 public class ImportVideoPanel extends Panel
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ImportDeckDialog.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ImportVideoPanel.class);
 	private static final long serialVersionUID = 1L;
 	final FileUploadField file;
 
@@ -52,7 +52,7 @@ public class ImportVideoPanel extends Panel
 			@Override
 			public void onSubmit()
 			{
-				ImportDeckDialog.LOGGER.info("trying to upload something");
+				ImportVideoPanel.LOGGER.info("trying to upload something");
 
 				//final FileUpload fupload = ImportDeckDialog.this.file.getFileUpload();
 				//if (fupload == null)
@@ -80,7 +80,7 @@ public class ImportVideoPanel extends Panel
 				//try
 				//{
 				//	new String(fupload.getBytes(), "UTF-8");
-				ImportDeckDialog.convert("/home/nostromo/test.avi", "/home/nostromo/test.mp3");
+				ImportVideoPanel.convert("/home/nostromo/test.avi", "/home/nostromo/test.mp3");
 				//}
 				//catch (final UnsupportedEncodingException e)
 				//{
@@ -90,7 +90,7 @@ public class ImportVideoPanel extends Panel
 
 				//ImportDeckDialog.LOGGER.info("successfully added deck: "
 				//		+ fupload.getClientFileName());
-				ImportDeckDialog.LOGGER.info("Your file has been successfully uploaded");
+				ImportVideoPanel.LOGGER.info("Your file has been successfully uploaded");
 			}
 		};
 		
