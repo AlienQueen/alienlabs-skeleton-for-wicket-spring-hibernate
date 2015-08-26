@@ -61,7 +61,7 @@ public class TranscriberDemo {
 
             System.out.format("Hypothesis: %s\n", result.getHypothesis());
 			
-			if (!result.getWords.isEmpty() && !"".equals(result.getHypothesis().trim())) {
+			if (!result.getWords().isEmpty() && !"".equals(result.getHypothesis().trim())) {
 				output.append
 				(result.getHypothesis()).append
 				(" from: ").append
