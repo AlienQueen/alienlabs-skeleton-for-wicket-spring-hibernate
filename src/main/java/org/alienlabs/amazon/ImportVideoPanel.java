@@ -1,6 +1,10 @@
 package org.alienlabs.amazon;
 
 import java.io.UnsupportedEncodingException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormSubmitBehavior;
@@ -98,7 +102,34 @@ public class ImportVideoPanel extends Panel
 	}
 	
 	public static void convert(String from, final String to) { 
-		Runtime.getRuntime().exec(
-			"ffmpeg -i " + from + "-acodec pcm_s16le -ac 2 " + to);
+		//Runtime.getRuntime().exec(
+		//	"ffmpeg -i " + from + "-acodec pcm_s16le -ac 2 " + to);
+		try {
+		ProcessBuilder pb = new ProcessBuilder("ffmpeg", "i", from, "acodec", "pcm_s16le", "ac", "2", to);
+		System.out.println("Run ffmpeg command");
+		Process process = pb.start();
+		int errCode = process.waitFor();
+		System.out.println("ffmpeg command executed, any errors? " + (errCode == 0 ? "No" : "Yes"));
+		System.out.println("ffpmeg Output:\n" + output(process.getInputStream()));   
+		}
+		catch (Exception e) {
+			ImportVideoPanel.LOGGER.error("error fonverti g video to wav", e);
+		}
+	}
+	
+	private static String output(InputStream inputStream) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		BufferedReader br = null;
+		
+		try {
+			br = new BufferedReader(new InputStreamReader(inputStream));
+			String line = null;
+			while ((line = br.readLine()) != null) {
+				sb.append(line + System.getProperty("line.separator"));
+			}
+		} finally {
+			br.close();
+		}
+		return sb.toString();
 	}
 }
