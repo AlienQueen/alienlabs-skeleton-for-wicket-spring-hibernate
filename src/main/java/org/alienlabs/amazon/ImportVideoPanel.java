@@ -96,7 +96,7 @@ public class ImportVideoPanel extends Panel {
 		final Button transcribe = new Button("transcribe") {
             @Override
             public void onSubmit() {
-				ImportVideoPanel.this.feedback.info(TranscriberDemo.transcribe();
+				ImportVideoPanel.this.feedback.info(TranscriberDemo.transcribe());
 			}
 		};
 		
