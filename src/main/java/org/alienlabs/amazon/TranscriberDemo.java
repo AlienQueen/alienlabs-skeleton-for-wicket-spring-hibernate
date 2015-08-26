@@ -59,7 +59,7 @@ public class TranscriberDemo {
 
             System.out.println("List of recognized words and their times:");
             for (WordResult r : result.getWords()) {
-                output.append(r);
+                output.append(r).append(" ");
                 System.out.println(r);
             }
 
