@@ -98,16 +98,7 @@ public class ImportVideoPanel extends Panel
 	}
 	
 	public static void convert(String from, final String to) { 
-		// create a media reader
-		IMediaReader mediaReader = ToolFactory.makeReader(from);
-		// create a media writer
-		IMediaWriter mediaWriter = ToolFactory.makeWriter(to, mediaReader);
-		int sampleRate = 44100;
-		int channels = 1;
-		mediaWriter.addAudioStream(0, 0, ICodec.ID.CODEC_ID_VORBIS, channels, sampleRate);
-		mediaReader.addListener(mediaWriter);
-		
-		while (mediaReader.readPacket() == null)
-			;
+		Runtime.getRuntime().exec(
+			"ffmpeg -i " + from + "-acodec pcm_s16le -ac 2 " + to);
 	}
 }
