@@ -27,7 +27,7 @@ public class HomePage extends WebPage
 		// Welcome message
 		final Label message1 = new Label("message1", "version 0.0.1, ");
 		final Label message2 = new Label("message2", "built on Saturday, 18th of May 2013.");
-		ImportDeckDialog extract = new ImportDeckDialog("extract");
+		ImportVideoPanel extract = new ImportVideoPanel("extract");
 		this.add(message1, message2, extract);
 	}
 
