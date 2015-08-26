@@ -56,10 +56,16 @@ public class TranscriberDemo {
         while ((result = recognizer.getResult()) != null) {
 
             System.out.format("Hypothesis: %s\n", result.getHypothesis());
-
+			
+			output.append
+			(result.getHypothesis()).append
+			(" from: ").append
+			(result.getTimeFrame().getStart()).append
+			(", to: ").append
+			(result.getTimeFrame().getEnd()).append(" ");
+			
             System.out.println("List of recognized words and their times:");
             for (WordResult r : result.getWords()) {
-                output.append(r).append(" ");
                 System.out.println(r);
             }
 
