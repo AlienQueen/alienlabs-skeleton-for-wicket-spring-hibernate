@@ -105,7 +105,7 @@ public class ImportVideoPanel extends Panel
 		//Runtime.getRuntime().exec(
 		//	"ffmpeg -i " + from + "-acodec pcm_s16le -ac 2 " + to);
 		try {
-		ProcessBuilder pb = new ProcessBuilder("ffmpeg", "i", from, "acodec", "pcm_s16le", "ac", "2", to);
+		ProcessBuilder pb = new ProcessBuilder("ffmpeg", "-i", from, "-acodec", "pcm_s16le", "-ac", "2 " + to);
 		System.out.println("Run ffmpeg command");
 		Process process = pb.start();
 		int errCode = process.waitFor();
