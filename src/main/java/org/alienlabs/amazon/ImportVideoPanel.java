@@ -106,7 +106,7 @@ public class ImportVideoPanel extends Panel
 		mediaReader.addListener(mediaWriter);
 		// read and decode packets from the source file
 		// and dispatch decoded audio and video to the writer
-		while (reader.readPacket() == null) {
+		while (mediaReader.readPacket() == null) {
 			do {} while(false);
 		}
 	}
