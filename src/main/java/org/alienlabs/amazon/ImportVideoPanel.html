@@ -3,8 +3,10 @@
     <div id="importVideo" class="myfont">
         <div align="center">
             <form wicket:id="form" enctype="multipart/form-data" class="myfont">
+			    <span wicket:id="feedback" class="myfont"></span>
                 <input wicket:id="videoFile" type="file" class="myfont"></input><br/><br/>
-                <input wicket:id="upload" type="submit" value="Upload" class="myfont"></input>
+                <input wicket:id="upload" type="submit" value="Upload video" class="myfont"></input>
+				<input wicket:id="transcribe" type="submit" value="Extract audio" class="myfont"></input>
             </form>
         </div>
     </div>

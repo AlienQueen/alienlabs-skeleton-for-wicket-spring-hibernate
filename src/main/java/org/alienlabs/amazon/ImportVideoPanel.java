@@ -18,6 +18,7 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.form.upload.FileUpload;
 import org.apache.wicket.markup.html.form.upload.FileUploadField;
 import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.apache.wicket.util.lang.Bytes;
@@ -31,6 +32,7 @@ public class ImportVideoPanel extends Panel {
     private static final Logger LOGGER = LoggerFactory.getLogger(ImportVideoPanel.class);
     private static final long serialVersionUID = 1L;
     final FileUploadField file;
+	final FeedbackPanel feedback;
 
     public ImportVideoPanel(final String id) {
         super(id);
@@ -41,8 +43,10 @@ public class ImportVideoPanel extends Panel {
         form.setMarkupId("inputForm").setOutputMarkupId(true);
         form.setMaxSize(Bytes.kilobytes(5));
         form.setMultiPart(true);
-        form.add(this.file);
-        this.add(form);
+        
+		this.feedback = new FeedbackPanel("feedback");
+		form.add(this.file, this.feedback);
+		this.add(form);
 
         final Button upload = new Button("upload") {
             @Override
@@ -88,8 +92,15 @@ public class ImportVideoPanel extends Panel {
                 ImportVideoPanel.LOGGER.info("Your file has been successfully uploaded");
             }
         };
-
-        form.add(upload);
+		
+		final Button transcribe = new Button("transcribe") {
+            @Override
+            public void onSubmit() {
+				ImportVideoPanel.this.feedback.info(TranscriberDemo.transcribe();
+			}
+		};
+		
+        form.add(upload, transcribe);
     }
 
     public static void convert(String from, final String to) {

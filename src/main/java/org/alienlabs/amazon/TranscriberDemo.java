@@ -25,7 +25,7 @@ import edu.cmu.sphinx.result.WordResult;
  */
 public class TranscriberDemo {
 
-    public static void main(String[] args) throws Exception {
+    public static String transcribe() throws Exception {
         System.out.println("Loading models...");
 
         Configuration configuration = new Configuration();
@@ -69,6 +69,6 @@ public class TranscriberDemo {
 
         }
         recognizer.stopRecognition();
-        System.out.println("Final result: " + output.toString());
+        return output.toString();
     }
 }
