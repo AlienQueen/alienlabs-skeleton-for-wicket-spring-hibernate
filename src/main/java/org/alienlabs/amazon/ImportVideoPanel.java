@@ -104,12 +104,10 @@ public class ImportVideoPanel extends Panel
 		IMediaWriter mediaWriter = ToolFactory.makeWriter(to, mediaReader);
 		// add a writer to the reader, to create the output file
 		mediaReader.addListener(mediaWriter);
-		// create a media viewer with stats enabled
-		IMediaViewer mediaViewer = ToolFactory.makeViewer(true);
-		// add a viewer to the reader, to see the decoded media
-		mediaReader.addListener(mediaViewer);
 		// read and decode packets from the source file
 		// and dispatch decoded audio and video to the writer
-		while (mediaReader.readPacket() == null) ;
+		while (reader.readPacket() == null) {
+			do {} while(false);
+		}
 	}
 }
