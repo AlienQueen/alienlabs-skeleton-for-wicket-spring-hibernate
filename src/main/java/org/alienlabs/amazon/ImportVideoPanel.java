@@ -102,12 +102,12 @@ public class ImportVideoPanel extends Panel
 		IMediaReader mediaReader = ToolFactory.makeReader(from);
 		// create a media writer
 		IMediaWriter mediaWriter = ToolFactory.makeWriter(to, mediaReader);
-		// add a writer to the reader, to create the output file
+		int sampleRate = 44100;
+		int channels = 1;
+		mediaWriter.addAudioStream(0, 0, ICodec.ID.CODEC_ID_WAVPACK, channels, sampleRate);
 		mediaReader.addListener(mediaWriter);
-		// read and decode packets from the source file
-		// and dispatch decoded audio and video to the writer
-		while (mediaReader.readPacket() == null) {
-			do {} while(false);
-		}
+		
+		while (mediaReader.readPacket() == null)
+			;
 	}
 }
