@@ -61,9 +61,9 @@ public class TranscriberDemo {
 			output.append
 			(result.getHypothesis()).append
 			(" from: ").append
-			(result.getTimeFrame().getStart()).append
+			(result.getWords().get(0).getTimeFrame().getStart()).append
 			(", to: ").append
-			(result.getTimeFrame().getEnd()).append(" ");
+			(result.getWords().get(0).getTimeFrame().getEnd()).append(" ");
 			
             System.out.println("List of recognized words and their times:");
             for (WordResult r : result.getWords()) {
