@@ -40,10 +40,10 @@ public class TranscriberDemo {
         // configuration.setAcousticModelPath("file:en-us");
 
         configuration
-			.setDictionaryPath("resource:/org/alienlabs/amazon/cmudict.0.7a_SPHINX_40");
+			.setDictionaryPath("resource:/org/alienlabs/amazon/cmudict-en-us.dict");
                 //.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
         configuration
-			.setLanguageModelPath("resource:/org/alienlabs/amazon/cmusphinx-5.0-en-us.lm.bin");
+			.setLanguageModelPath("resource:/org/alienlabs/amazon/en-us.lm.bin");
                 //.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin");
 
         StreamSpeechRecognizer recognizer = new StreamSpeechRecognizer(
