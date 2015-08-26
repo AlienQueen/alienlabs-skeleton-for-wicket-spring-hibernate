@@ -61,12 +61,14 @@ public class TranscriberDemo {
 
             System.out.format("Hypothesis: %s\n", result.getHypothesis());
 			
-			output.append
-			(result.getHypothesis()).append
-			(" from: ").append
-			(result.getWords().get(0).getTimeFrame().getStart()).append
-			(", to: ").append
-			(result.getWords().get(0).getTimeFrame().getEnd()).append(" ");
+			if (!result.getWords.isEmpty() && !"".equals(result.getHypothesis().trim())) {
+				output.append
+				(result.getHypothesis()).append
+				(" from: ").append
+				(result.getWords().get(0).getTimeFrame().getStart()).append
+				(", to: ").append
+				(result.getWords().get(0).getTimeFrame().getEnd()).append(" ");
+			}
 			
             System.out.println("List of recognized words and their times:");
             for (WordResult r : result.getWords()) {
