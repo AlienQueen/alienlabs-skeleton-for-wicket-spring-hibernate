@@ -29,7 +29,7 @@ import org.springframework.beans.factory.annotation.Required;
 @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = {"SE_INNER_CLASS",
         "SIC_INNER_SHOULD_BE_STATIC_ANON"}, justification = "In Wicket, serializable inner classes are common. And as the parent Page is serialized as well, this is no concern. This is no bad practice in Wicket")
 public class ImportVideoPanel extends Panel {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ImportVideoPanel.class);
+    static final Logger LOGGER = LoggerFactory.getLogger(ImportVideoPanel.class);
     private static final long serialVersionUID = 1L;
     final FileUploadField file;
 	final FeedbackPanel feedback;
@@ -96,7 +96,12 @@ public class ImportVideoPanel extends Panel {
 		final Button transcribe = new Button("transcribe") {
             @Override
             public void onSubmit() {
-				ImportVideoPanel.this.feedback.info(TranscriberDemo.transcribe());
+				try {
+					ImportVideoPanel.this.feedback.info(TranscriberDemo.transcribe());
+				}
+				catch (Exception e) {
+					ImportVideoPanel.LOGGER.error("error transcribing file", e);
+				}
 			}
 		};
 		
