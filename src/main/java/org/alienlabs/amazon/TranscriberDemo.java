@@ -33,17 +33,20 @@ public class TranscriberDemo {
 
         // Load model from the jar
         configuration
-				.setAcousticModelPath("resource:/org/alienlabs/amazon/cmusphinx-en-us-5.2");
+			.setAcousticModelPath("file:/home/nostromo/new/voxforge_en_sphinx.cd_cont_3000");
+				//.setAcousticModelPath("resource:/org/alienlabs/amazon/cmusphinx-en-us-5.2");
                 //.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
 
         // You can also load model from folder
         // configuration.setAcousticModelPath("file:en-us");
 
         configuration
-			.setDictionaryPath("resource:/org/alienlabs/amazon/cmudict.0.7a_SPHINX_40");
+			.setDictionaryPath("file:/home/nostromo/new/cmudict.0.7a");
+			//.setDictionaryPath("resource:/org/alienlabs/amazon/cmudict.0.7a_SPHINX_40");
                 //.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
         configuration
-			.setLanguageModelPath("resource:/org/alienlabs/amazon/cmusphinx.lm.bin");
+			.setLanguageModelPath("file:/home/nostromo/new/voxforge_en_sphinx.lm.bin");
+			//.setLanguageModelPath("resource:/org/alienlabs/amazon/cmusphinx.lm.bin");
                 //.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin");
 
         StreamSpeechRecognizer recognizer = new StreamSpeechRecognizer(
