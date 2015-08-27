@@ -32,22 +32,22 @@ public class TranscriberDemo {
         Configuration configuration = new Configuration();
 
         // Load model from the jar
-        configuration
-			.setAcousticModelPath("file:/home/nostromo/english/cmusphinx-en-us-5.2");
+        configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
+			//.setAcousticModelPath("file:/home/nostromo/english/cmusphinx-en-us-5.2");
 				//.setAcousticModelPath("resource:/org/alienlabs/amazon/cmusphinx-en-us-5.2");
-                //.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
+            
 
         // You can also load model from folder
         // configuration.setAcousticModelPath("file:en-us");
 
-        configuration
-			.setDictionaryPath("file:/home/nostromo/english/cmudict.0.7a_SPHINX_40.dict");
+        configuration.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
+			//.setDictionaryPath("file:/home/nostromo/english/cmudict.0.7a_SPHINX_40.dict");
 			//.setDictionaryPath("resource:/org/alienlabs/amazon/cmudict.0.7a_SPHINX_40");
-                //.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
-        configuration
-			.setLanguageModelPath("file:/home/nostromo/english/cmusphinx-5.0-en-us.lm.bin");
+                
+        configuration.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin");
+			//.setLanguageModelPath("file:/home/nostromo/english/cmusphinx-5.0-en-us.lm.bin");
 			//.setLanguageModelPath("resource:/org/alienlabs/amazon/cmusphinx.lm.bin");
-                //.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin");
+                
 
         StreamSpeechRecognizer recognizer = new StreamSpeechRecognizer(
                 configuration);
