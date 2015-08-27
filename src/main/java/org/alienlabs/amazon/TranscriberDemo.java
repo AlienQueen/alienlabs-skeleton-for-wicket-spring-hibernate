@@ -40,7 +40,7 @@ public class TranscriberDemo {
         // configuration.setAcousticModelPath("file:en-us");
 
         configuration
-			.setDictionaryPath("resource:/org/alienlabs/amazon/cmudict-0.7b.dict");
+			.setDictionaryPath("resource:/org/alienlabs/amazon/cmudict.0.7a_SPHINX_40");
                 //.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
         configuration
 			.setLanguageModelPath("resource:/org/alienlabs/amazon/cmusphinx.lm.bin");
